@@ -12,5 +12,5 @@ spec:
       containers:
         - name: nginx-app
           image: nginx:1.17.4-alpine
-          ports:
+          portss:
             - containerPort: 80
