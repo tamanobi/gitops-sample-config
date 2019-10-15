@@ -15,4 +15,4 @@ jobs:
           .github/scripts/setup_kubeval.sh
       - name: Test Kubernetes Manifest
         run: |
-          ./kubeval --output=stdout -f ./nginx/deployment
+          ./kubeval --output=stdout -f ./nginx/deployment.yaml
