@@ -10,9 +10,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: Install kubeval
         run: |
-        pwd
-        ls -al
-        .github/scripts/setup_kubeval.sh
+          pwd
+          ls -al
+          .github/scripts/setup_kubeval.sh
       - name: Test Kubernetes Manifest
         run: |
           ./kubeval --output=stdout -f ./nginx/deployment
