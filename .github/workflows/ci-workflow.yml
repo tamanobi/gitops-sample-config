@@ -11,5 +11,4 @@ jobs:
       - name: Install kubeval
         run: .github/scripts/setup_kubeval.sh
       - name: Test Kubernetes Manifest
-        run: |
-          ./kubeval --output=stdout --directories=./kubernetes
+        run: .github/scripts/check_yaml.sh
