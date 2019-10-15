@@ -14,4 +14,4 @@ jobs:
           tar xf ./kubeval-linux-amd64.tar.gz
       - name: Test Kubernetes Manifest
         run: |
-          ./kubeval --output=stdout -d ./nginx
+          ./kubeval --output=stdout -f ./nginx/deployment
