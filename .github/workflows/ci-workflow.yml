@@ -8,9 +8,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Test Kubernetes Manifest
+      - name: Install kubeval
         run: |
           wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
           tar xf ./kubeval-linux-amd64.tar.gz
-          chmod +x ./kubeval
+          ./kubeval -d ./nginx
+      - name: Test Kubernetes Manifest
+        run: |
           ./kubeval -d ./nginx
