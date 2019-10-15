@@ -8,8 +8,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Install Dependencies
+      - name: Test Kubernetes Manifest
         run: |
           wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
           tar xf ./kubeval-linux-amd64.tar.gz
+          ls -al
           ./kubeval -d nginx
