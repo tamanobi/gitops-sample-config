@@ -2,7 +2,8 @@
   
 set -eu
 
-find ./kubernetes -name "*.yaml" -type f | while read FILE
+find ${1-.} -name "*.yaml" -type f | while read FILE
 do
-    ./kubeval -o=stdout --strict "${FILE}"
+    # 注意 kubeval はCRDに対応していないためスキップする (https://kubeval.instrumenta.dev/)
+    /kubeval -o=tap --strict --skip-kinds Issuer,Certificate "${FILE}"
 done
