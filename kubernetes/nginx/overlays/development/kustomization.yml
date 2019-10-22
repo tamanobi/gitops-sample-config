@@ -1,0 +1,4 @@
+bases:
+  - ../../base
+patchesStrategicMerge:
+  - change-nginx-deployment-replicas.yml
